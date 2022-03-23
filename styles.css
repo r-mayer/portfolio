@@ -35,6 +35,14 @@ header {
 
 }
 
+.ghost-icon {
+    animation-duration: 1s;
+    animation-name: ghost;
+    animation-iteration-count: infinite;
+    transition: all ease;
+}
+
+
 .ghost-icon, .github-icon, .linkedin-icon {
     fill: var(--color-blue);
     width: 30px;
@@ -43,9 +51,11 @@ header {
 }
 
 .ghost-icon:hover, .github-icon:hover, .linkedin-icon:hover {
-    fill: #014641;
+    fill: #46ccc3;
     transition: all 0.3s ease;
+    transform: scale(1.1);
 }
+
 
 .binary-icon {
     fill: var(--color-orange);
@@ -106,6 +116,20 @@ header {
     align-items: center;
 }
 
+@keyframes ghost {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    50% {
+      transform: rotate(15deg) scale(1.2);
+    }
+
+    100% {
+      transform: rotate(-15deg);
+    }
+}
+
 
 /* ----- toggle switch button ------ */
 .switch {
@@ -133,7 +157,7 @@ header {
     transition: .4s;
   }
   
-  .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 10px;
@@ -145,27 +169,27 @@ header {
     transition: .4s;
   }
   
-  input:checked + .slider {
+input:checked + .slider {
     background-color:var(--color-blue);
     border: 2px solid var(--color-blue);
   }
   
-  input:focus + .slider {
+input:focus + .slider {
     box-shadow: 0 0 1px var(--color-blue);
   }
   
-  input:checked + .slider:before {
+input:checked + .slider:before {
     -webkit-transform: translateX(10px);
     -ms-transform: translateX(10px);
     transform: translateX(10px);
     background-color:var(--color-black);
   }
   
-  .slider.round {
+.slider.round {
     border-radius: 25px;
   }
   
-  .slider.round:before {
+.slider.round:before {
     border-radius: 50%;
   }
 
@@ -173,16 +197,67 @@ header {
 
 
 
-  .in-construction {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(158.23deg, #0D0D0D 36.63%, #011D1B 97.1%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
+  /* ------ HERO SECTION --------- */
 
-  .in-construction p {
-      font-size: 50px;
-      color: var(--color-white);
-  }
+
+.hero {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    background: linear-gradient(158.23deg, #0D0D0D 36.63%, #011D1B 97.1%);
+    display: flex;
+}
+
+.hero-resume {
+    width: 550px;
+    height: auto;
+    margin-left: 80px;
+    margin-top: 90px;
+}
+
+.hero-resume-h2 {
+    color: var(--color-white);
+    font-size: 20px;
+}
+
+.hero-resume-title {
+    color: var(--color-white);
+    font-size: 40px;
+}
+
+.hero-text-span {
+    color: var(--color-blue);
+}
+
+.hero-resume-text {
+    color: var(--color-white);
+    font-size: 16px;
+}
+
+.hero-btn {
+    border: 2px solid var(--color-blue);
+    border-radius: 15px;
+    margin-top: 20px;
+    width: 220px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    color: var(--color-white);
+    font-size: 16px;
+}
+
+.hero-btn:hover {
+    background-color: var(--color-orange);
+    border: 2px solid var(--color-orange);
+    color: var(--color-black);
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.footer-test {
+    height: 50px;
+    width: 100%;
+    background-color: var(--color-black);
+}
